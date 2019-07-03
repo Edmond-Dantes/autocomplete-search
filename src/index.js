@@ -13,8 +13,9 @@ ReactDOM.render(
 function Example() {
     const items = cityNames;
     return (
-        <div>
-            <h2>Hello Example</h2>
+        <div style={{textAlign: 'center'}}>
+            <h2>Autocomplete Search</h2>
+            <h3>Type a US city!</h3>
             <Search
                 // controlled
                 items={items}
