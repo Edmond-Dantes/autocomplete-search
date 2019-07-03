@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import ReactDOM from "react-dom";
 import Search from './lib/Search';
 import { cityNames } from './example/data.js';
