@@ -5,6 +5,10 @@ function debounce(callback, delay) {
         timeoutID = setTimeout(() => {
             callback(...args)
         }, delay);
+        return () => {
+            clearTimeout(timeoutID);
+            console.log("cancel");
+        }
     }
 }
 

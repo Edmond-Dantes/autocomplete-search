@@ -1,42 +1,38 @@
 import React, { useState, useEffect } from 'react';
 import { autoCompleteDebounce } from './util';
+import styles from './index.module.css'
 
-function Search({items, onChange, controlled}) {
+function Search({items, onChange}) {
     const [value, setValue] = useState("");
     const [displayItems, setDisplayItems] = useState([]);
 
     const onDebounce = filteredItems => {
-        if (!controlled) setDisplayItems(filteredItems);
+        setDisplayItems(filteredItems);
         if (onChange) onChange(value);
     }
-    
-    let valueDidUpdate = () => {};
-    if (!controlled) {
-        valueDidUpdate = () => {
-            if (value) { 
-                autoCompleteDebounce(value, items, onDebounce);
-            } else {
-                setDisplayItems([])
-            }
+    const valueDidUpdate = () => {
+        const debounceCancel = autoCompleteDebounce(value, items, onDebounce);
+        if (!value) {
+            setDisplayItems([]);
+            debounceCancel();
         }
     }
-        
+
     useEffect(valueDidUpdate, [value]);
     
-    const onInputChange = event => {
-        setValue(event.target.value);
-    }
-
-    let itemsToShow = controlled ? items : displayItems;
-
+    const onInputChange = event => setValue(event.target.value);
     return (
-        <div style={{display: 'inline-block'}}>
+        <div className={styles.Wrapper} >
             <input onChange={onInputChange} value={value} />
-            <ul>
-                {itemsToShow && itemsToShow.map((item, index) => (
-                    <li key={index}>{item}</li>
-                ))}
-            </ul>
+            {displayItems && displayItems.length > 0 && (
+                <div className={styles.ListContainer}>
+                    <ul className={styles.List}>
+                        {displayItems.map((item, index) => (
+                            <li key={index}>{item}</li>
+                        ))}
+                    </ul>
+                </div>
+            )}
         </div>
     );
 }

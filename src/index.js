@@ -17,10 +17,12 @@ function Example() {
             <h2>Autocomplete Search</h2>
             <h3>Type a US city!</h3>
             <Search
-                // controlled
                 items={items}
-                onChange={value => console.log(value)}
+                onChange={value => {
+                    console.log(value);
+                }}
             />
+            <h1>Hello</h1>
         </div>
     )
 }
