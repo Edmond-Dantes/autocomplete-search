@@ -1,15 +1,17 @@
 function debounce(callback, delay) {
     let timeoutID;
-    return (...args) => {
+    const debounced = (...args) => {
         clearTimeout(timeoutID);
         timeoutID = setTimeout(() => {
             callback(...args)
         }, delay);
-        return () => {
-            clearTimeout(timeoutID);
-            console.log("cancel");
-        }
     }
+    debounced.cancel = () => {
+        clearTimeout(timeoutID);
+        console.log("cancel");
+    }
+
+    return debounced;
 }
 
 export {
