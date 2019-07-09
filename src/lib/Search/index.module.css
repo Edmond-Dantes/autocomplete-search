@@ -1,0 +1,24 @@
+.Wrapper {
+  display: inline-block;
+  max-height: 2em;
+}
+
+.ListContainer {
+  position: relative;
+}
+
+.List {
+  position: absolute;
+  background-color: white;
+  border: 1px solid lightgray;
+  border-top: none;
+  margin: 0px;
+  padding-top: 1em;
+}
+
+ul {
+  text-align: left;
+  list-style: none;
+  padding-left: 1em;
+  padding-bottom: 1em;
+}

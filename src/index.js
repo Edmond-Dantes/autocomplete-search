@@ -1,12 +1,28 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+import React from "react";
+import ReactDOM from "react-dom";
+import Search from './lib/Search';
+import { cityNames } from './example/data.js';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+const NODE = document.getElementById("root");
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+ReactDOM.render(
+    <Example/>,
+    NODE
+);
+
+function Example() {
+    const items = cityNames;
+    return (
+        <div style={{textAlign: 'center'}}>
+            <h2>Autocomplete Search</h2>
+            <h3>Type a US city!</h3>
+            <Search
+                items={items}
+                onChange={value => {
+                    console.log(value);
+                }}
+            />
+            <h1>Hello</h1>
+        </div>
+    )
+}
