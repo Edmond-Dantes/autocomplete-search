@@ -11,10 +11,10 @@ function Search({items, onChange}) {
         if (onChange) onChange(value);
     }
     const valueDidUpdate = () => {
-        const debounceCancel = autoCompleteDebounce(value, items, onDebounce);
+        autoCompleteDebounce(value, items, onDebounce);
         if (!value) {
             setDisplayItems([]);
-            debounceCancel();
+            autoCompleteDebounce.cancel();
         }
     }
 
