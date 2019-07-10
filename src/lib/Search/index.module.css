@@ -1,24 +1,16 @@
-.Wrapper {
+.container {
   display: inline-block;
   max-height: 2em;
 }
 
-.ListContainer {
+.inputContainer {
   position: relative;
 }
 
-.List {
+.shadow {
   position: absolute;
-  background-color: white;
-  border: 1px solid lightgray;
-  border-top: none;
-  margin: 0px;
-  padding-top: 1em;
-}
-
-ul {
-  text-align: left;
-  list-style: none;
-  padding-left: 1em;
-  padding-bottom: 1em;
+  left: 5px;
+  margin: 0;
+  opacity: 0.2;
+  font-size: 0.8em;
 }

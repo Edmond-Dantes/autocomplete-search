@@ -1,6 +1,6 @@
-function debounce(callback, delay) {
+function debounce(callback) {
     let timeoutID;
-    const debounced = (...args) => {
+    const debounced = (delay, ...args) => {
         clearTimeout(timeoutID);
         timeoutID = setTimeout(() => {
             callback(...args)

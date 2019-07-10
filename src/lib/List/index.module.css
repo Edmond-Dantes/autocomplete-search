@@ -1,0 +1,30 @@
+.container {
+  position: relative;
+}
+
+.list {
+  position: absolute;
+  background-color: white;
+  border: 1px solid lightgray;
+  border-top: none;
+  margin: 0px;
+  padding-top: 1em;
+}
+
+ul {
+  text-align: left;
+  list-style: none;
+  padding-bottom: 1em;
+  padding-left: 0;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+li {
+  padding-left: 1em;
+}
+
+.highlighted {
+  background-color: blue;
+  color: white;
+}

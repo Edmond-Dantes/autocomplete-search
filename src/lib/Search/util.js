@@ -9,7 +9,7 @@ const autoCompleteDebounce = debounce((value, items, callback) => {
             .sort((a, b) => a.search(regEx) - b.search(regEx));
     }
     callback(displayItems);
-}, 1000);
+});
 
 export {
     autoCompleteDebounce
