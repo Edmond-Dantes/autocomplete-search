@@ -23,7 +23,6 @@ function Example() {
                     console.log(value);
                 }}
             />
-            <h1>Hello</h1>
         </div>
     )
 }

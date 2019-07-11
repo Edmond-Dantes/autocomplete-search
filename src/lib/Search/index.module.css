@@ -2,15 +2,3 @@
   display: inline-block;
   max-height: 2em;
 }
-
-.inputContainer {
-  position: relative;
-}
-
-.shadow {
-  position: absolute;
-  left: 5px;
-  margin: 0;
-  opacity: 0.2;
-  font-size: 0.8em;
-}
