@@ -14,16 +14,14 @@ function Search({ delay, items, onChange }) {
     if (onChange) onChange(value);
   };
 
-  const valueDidUpdate = () => {
+  useEffect(() => {
     autoCompleteDebounce(delay, value, items, onDebounce);
     if (!value) {
       setDisplayItems([]);
       setHighlightedItem(null);
       autoCompleteDebounce.cancel();
     }
-  };
-
-  useEffect(valueDidUpdate, [value]);
+  }, [value]);
 
   const onInputChange = event => setValue(event.target.value);
 
