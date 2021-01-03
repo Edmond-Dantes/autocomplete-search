@@ -1,0 +1,5 @@
+~~~demo.schema
+{
+  "path": ""
+}
+~~~
